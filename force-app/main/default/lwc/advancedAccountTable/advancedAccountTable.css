@@ -1,0 +1,11 @@
+/* yourComponent.css */
+:host {
+    display: block;
+    background-image: url(/resource/bgimg); /* Static Resource URL */
+    background-size: cover; /* Makes the image cover the entire area */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    height: 100vh; /* Adjust to fit the height of the viewport */
+    width: 100%; /* Adjust to fit the width of the component */
+    padding: 1rem; /* Optional: Adds some padding for content */
+}

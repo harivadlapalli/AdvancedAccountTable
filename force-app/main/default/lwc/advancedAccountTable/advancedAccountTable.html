@@ -1,0 +1,30 @@
+<template>
+    <div class="background-container">
+        <lightning-card title="Advanced Accounts Data-Table" icon-name="standard:account">
+            <div>
+                <div class="slds-p-bottom_small slds-grid slds-grid_align-spread">
+                    <p style="margin: auto 0 auto 0;"><b>Total Records:</b> {remainingRecords} out of {totalRecords}</p>
+                    <div class="slds-grid">
+                        <lightning-input type="search" label="Search" onchange={handleSearchChange}></lightning-input>
+                        <lightning-button label="Search" variant="brand" onclick={handleSearch}
+                            class="slds-p-left_small" style="margin-top:auto;"></lightning-button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <lightning-datatable key-field="id" data={accounts} columns={columns} onsort={handleSort}
+                    sorted-by={sortField} sorted-direction={sortDirection} hide-checkbox-column="true">
+                </lightning-datatable>
+            </div>
+            <div class="slds-m-top_medium slds-grid slds-grid_align-spread">
+                <lightning-button label="Previous" onclick={handlePreviousPage} disabled={isPreviousDisabled}
+                    class="slds-p-left_small" style="margin-bottom:auto;">
+                </lightning-button>
+                <div>Page {currentPage} of {totalPages}</div>
+                <lightning-button label="Next" onclick={handleNextPage} disabled={isNextDisabled}
+                    class="slds-p-right_small" style="margin-bottom:auto;">
+                </lightning-button>
+            </div>
+        </lightning-card>
+    </div>
+</template>
